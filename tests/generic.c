@@ -810,7 +810,7 @@ void	ft_test_strclr(char **strings)
 		s2 = (char *)malloc(sizeof(char) * (ptr - strings));
 		ft_memcpy(s2, *ptr, ptr - strings);
 		len = rand() % (ptr - strings + (ptr - strings == 0));
-		ft_strclr(s1);
+x 		ft_strclr(s1);
 		strclr2(s2);
 		if (s2 && ERROR && (ptr - strings) > ERROR_DIF)
 		{
