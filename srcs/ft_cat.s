@@ -24,7 +24,7 @@ ft_loop:
 	mov		rdi,	1			;edit fd
 	mov		rdx,	rax			;edit len
 	mov		rax,	0x2000004	;write syscall
-	call	_write				;write
+	syscall							;write
 	pop		rdx					;restore len;
 	pop		rdi					;restore fd
 	jmp		ft_loop
