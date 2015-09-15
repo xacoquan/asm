@@ -267,7 +267,7 @@ void	ft_test_strcat(char **strings)
 			s2 = ft_memcpy(s2, s1, len * 2 + 1);
 			strcat(s1, tmp);
 			strcat(s2, tmp);
-			free(tmp);	
+			free(tmp);
 			if (ft_memcmp(s1, s2, len * 2 + 1 + ERROR))
 			{
 				while (c-- > 0)
@@ -448,16 +448,16 @@ void	ft_test_puts(char **strings, char *name)
 	char	*new;
 	char	*original;
 
-	c = dprintf(1, "\e[1;34mTesting %s ...\e[0m");
+	c = dprintf(1, "\e[1;34mTesting ...\e[0m");
 	ptr = strings;
 	while (*ptr && ptr - strings < RANDOM_PUT_TESTS)
 	{
 		if (!(strcmp("ft_puts", name)))
 			ft_testfunction(1, 1, 1, ft_puts, *ptr);
-		else if (!(strcmp("ft_putchar", name)))
-			ft_testfunction(1, 1, 1, ft_putchar, *ptr);
-		else if (!(strcmp("ft_putchar_fd", name)))
-			ft_testfunction(rand() % MAX_FD, 1, 1, ft_putchar_fd, *ptr);
+//		else if (!(strcmp("ft_putchar", name)))
+		//		ft_testfunction(1, 1, 1, ft_putchar, *ptr);
+//		else if (!(strcmp("ft_putchar_fd", name)))
+		//		ft_testfunction(rand() % MAX_FD, 1, 1, ft_putchar_fd, *ptr);
 		else if (!(strcmp("ft_putstr", name)))
 			ft_testfunction(1, 1, 1, ft_putstr, *ptr);
 		else if (!(strcmp("ft_putstr_fd", name)))
@@ -465,10 +465,10 @@ void	ft_test_puts(char **strings, char *name)
 		new = ft_getfilecontent();
 		if (!(strcmp("ft_puts", name)))
 			ft_testfunction(1, 1, 1, puts2, *ptr);
-		else if (!(strcmp("ft_putchar", name)))
-			ft_testfunction(1, 1, 1, putchar2, *ptr);
-		else if (!(strcmp("ft_putchar_fd", name)))
-			ft_testfunction(rand() % MAX_FD, 1, 1, putchar_fd2, *ptr);
+//		else if (!(strcmp("ft_putchar", name)))
+		//		ft_testfunction(1, 1, 1, putchar2, *ptr);
+//		else if (!(strcmp("ft_putchar_fd", name)))
+		//		ft_testfunction(rand() % MAX_FD, 1, 1, putchar_fd2, *ptr);
 		else if (!(strcmp("ft_putstr", name)))
 			ft_testfunction(1, 1, 1, putstr2, *ptr);
 		else if (!(strcmp("ft_putstr_fd", name)))
@@ -662,7 +662,7 @@ void	ft_test_strnew(void)
 		{
 			while (c-- > 0)
 				write(1, "\b \b", 3);
-			dprintf(1, "\e[1;31mft_strnew is invalid with len %i : ft_strnew = :");
+			dprintf(1, "\e[1;31mft_strnew is invalid with len %i : ft_strnew = :", len);
 			if (s1 && 0)
 				write(1, s1, ft_strlen(s1));
 			else
@@ -699,7 +699,7 @@ void	ft_test_memcmp(char **strings)
 	{
 		tmp = strdup(*ptr);
 		if (ft_strlen(tmp) > 2)
-		{	
+		{
 			len = rand() % ft_strlen(tmp);
 			tmp[rand() % ft_strlen(tmp)] = rand();
 			v1 = ft_memcmp(*ptr, tmp, len);
@@ -744,7 +744,7 @@ void	ft_test_strchr(char **strings)
 			{
 				while (c-- > 0)
 					write(1, "\b \b", 3);
-				dprintf(1, "\e[1;31mft_strchr is invalid with '%s' : ft_strchr = %i, strchr = %i\n\e[0m", *ptr, v1, v2);
+				dprintf(1, "\e[1;31mft_strchr is invalid with '%s' : ft_strchr = %s, strchr = %s\n\e[0m", *ptr, v1, v2);
 				return ;
 			}
 			loop++;
@@ -771,7 +771,7 @@ void	ft_test_strcmp(char **strings)
 	{
 		tmp = strdup(*ptr);
 		if (ft_strlen(tmp) > 2)
-		{	
+		{
 			len = rand() % ft_strlen(tmp);
 			tmp[rand() % ft_strlen(tmp)] = rand();
 			v1 = ft_strcmp(*ptr, tmp);
@@ -879,8 +879,8 @@ int		main(void)
 	ft_test_strcmp(strings);
 	ft_test_strcpy(strings);
 	ft_test_strnew();
-	ft_test_puts(strings, "ft_putchar");
-	ft_test_puts(strings, "ft_putchar_fd");
+//	ft_test_puts(strings, "ft_putchar");
+	//ft_test_puts(strings, "ft_putchar_fd");
 	ft_test_puts(strings, "ft_putstr");
 	ft_test_puts(strings, "ft_putstr_fd");
 	return (0);

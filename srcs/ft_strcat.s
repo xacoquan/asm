@@ -1,37 +1,30 @@
-section .bss
-buffer:
-	         resb    255
 section .text
-	global _ft_cat
-	extern		_ft_bzero
+	global _ft_strcat
 
-_ft_cat:
-	mov		ecx, edi
-	cmp		edi, -1
-	jle		end
+_ft_strcat:
+	push		rbx
+	push		rcx
+	mov			rbx, rdi
+	mov			rcx, rsi
 
 while:
-	mov		rax, 0x2000003
-	lea		rsi, [rel buffer]
-	mov		edx, 255
-	mov		ecx, edi
-	push	rcx
-	syscall
-	pop		rcx
-	jc		end
-	cmp		rax, 0
-	jle		end
-	mov		edi, 1
-	lea		rsi, [rel buffer]
-	mov		edx, eax
-	mov		eax, 0x2000004
-	push	rcx
-	syscall
-	pop		rdi
-	cmp		rax, -1
-	jle		end
-	jmp		while
-	
+	cmp byte	[rbx], 0
+	je			concat
+	add			rbx, 1
+	jmp			while
+
+concat:
+	cmp byte	[rcx], 0
+	je			end
+	mov			rax, [rcx]
+	mov			[rbx], al
+	add			rcx, 1
+	add			rbx, 1
+	jmp			concat
+
 end:
+	mov	byte	[rbx], 0
+	mov			rax, rdi
+	pop			rcx
+	pop			rbx
 	ret
-	

@@ -15,7 +15,7 @@ ft_loop:
 	push	rdi					;save fd
 	push	rdx					;save len
 	push	rsi					;save buff
-	mov		eax,	0x2000003	;read syscall
+	mov		rax,	0x2000003	;read syscall
 	syscall						;read
 	jc		exitpop
 	cmp		rax,	0
@@ -23,7 +23,7 @@ ft_loop:
 	pop		rsi					;restore buff
 	mov		rdi,	1			;edit fd
 	mov		rdx,	rax			;edit len
-	mov		eax,	0x2000004	;write syscall
+	mov		rax,	0x2000004	;write syscall
 	call	_write				;write
 	pop		rdx					;restore len;
 	pop		rdi					;restore fd

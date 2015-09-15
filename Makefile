@@ -22,8 +22,6 @@ SRCS = ft_isalpha.s \
 	ft_isalnum.s	\
 	ft_memcmp.s		\
 	ft_strcmp.s		\
-	ft_putchar.s    \
-	ft_putchar_fd.s	\
 	ft_putstr.s		\
 	ft_putstr_fd.s	\
 	ft_memalloc.s	\
