@@ -879,8 +879,6 @@ int		main(void)
 	ft_test_strcmp(strings);
 	ft_test_strcpy(strings);
 	ft_test_strnew();
-//	ft_test_puts(strings, "ft_putchar");
-	//ft_test_puts(strings, "ft_putchar_fd");
 	ft_test_puts(strings, "ft_putstr");
 	ft_test_puts(strings, "ft_putstr_fd");
 	return (0);

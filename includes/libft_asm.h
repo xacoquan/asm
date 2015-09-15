@@ -6,7 +6,7 @@
 /*   By: xacoquan <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/06/06 21:12:13 by xacoquan          #+#    #+#             */
-/*   Updated: 2015/09/11 01:33:52 by xacoquan         ###   ########.fr       */
+/*   Updated: 2015/09/15 08:17:05 by xacoquan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,8 +40,6 @@ int		ft_islower(int c);
 int		ft_isupper(int c);
 void	*ft_memalloc(size_t size);
 int		ft_memcmp(const void *s1, const void *s2, size_t n);
-void	ft_putchar(int c);
-void	ft_putchar_fd(int c, int fd);
 void	ft_putstr(char *str);
 void	ft_putstr_fd(char *str, int fd);
 char	*ft_strchr(const char *s, int c);

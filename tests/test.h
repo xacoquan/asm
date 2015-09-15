@@ -1,4 +1,3 @@
-
 #include "../includes/libft_asm.h"
 #include <ctype.h>
 #include <stdio.h>
@@ -13,7 +12,7 @@
 #define	ERROR_DIF 1
 #define READ_LEN 85
 #define MAX_FD 100
-#define PATH "/tmp/test"
+#define PATH "/tmp/tests"
 
 typedef int			(*compare)(int v);
 typedef int			(*output)(const char *str);
